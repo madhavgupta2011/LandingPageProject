@@ -1,0 +1,40 @@
+body{
+    background-image: url("images/plane.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.navbar
+{
+    background-color: white !important;
+}
+#logo
+{
+    height: auto;
+    width:auto;
+    max-width:150px;
+}
+a:hover
+{
+    background-color:papayawhip;
+}
+#travellers
+{
+    list-style-type: none;
+    margin:0px;
+    padding:0px;
+}
+.nayi
+{
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+    color:black;
+    text-decoration: none;
+}
+#addPass
+{
+    height:auto;
+}
+

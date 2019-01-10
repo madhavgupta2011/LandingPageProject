@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Air Travel Booking</title>
+  <link rel="icon" href="images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="main.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <span class="container">
+      <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 150px;" id="logo"></a>
+    </span>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="card" style=" background:rgba(240,0,0,0.1); ">
+          <div class=" card-header">
+          </div>
+          <div class="tab-content">
+              <form style="background-color: transparent;" method="POST" action="submit.php"
+              >
+            <div class="tab-pane active" id="Traveller1">
+              <div class="container">
+                <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                  <div class="card-header" style="background: rgba(240, 0, 0, 0.5); color: white;">
+                    Traveller-1
+                  </div>
+                </div>
+                <div class="container" style="margin:auto; ">
+                  <div class="row">
+                    <div class="col-lg-12">
+
+                      <div class="card" style="padding: 10px; margin:10px 0px; background: rgba(0,0,0,0.1); color: white;">
+                        <div class="card-header" style="background: rgba(240, 0, 0, 0.5); color: white;">
+                          Passenger Details
+                        </div>
+                        <div class="card-body">
+                          <h5>
+                            Name
+                            <small>(As per Passport)</small>
+                          </h5>
+                          
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <input type="text" name="Fname" class="form-control" id="inputfname" placeholder="Given Name" required
+                                  >
+                              </div>
+                              <div class="form-group col-md-4">
+                                <input type="text" name="Mname" class="form-control" id="inputMname" placeholder="Middle Name">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <input type="text" name="Lname" class="form-control" id="inputLname" placeholder="Last Name" required
+                                  >
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group cold-md-2">
+                                <label for="inputGender">Gender</label>
+                                <select name="Gender" id="inputGender" class="form-control" required >
+                                  <option selected>Choose...</option>
+                                  <option>Male</option>
+                                  <option>Female</option>
+                                </select>
+
+                              </div>
+                              <div class="form-group col-md-5">
+                                <label for="inputMail">E-Mail</label>
+                                <input type="email" name="email" class="form-control" id="inputMail" placeholder="Enter your mail" required
+                                  >
+                              </div>
+                              <div class="form-group col-md-5">
+                                <label for="inputNumber">Mobile Number</label>
+                                <input type="text" name="number" class="form-control" id="inputNumber" placeholder="Your Mobile Number" required
+                                  >
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-3">
+                                <label for="inputDOB">Date of Birth</label>
+                                <input type="date" name="dob" class="form-control" id="inputDOB" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress"></label>
+
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label>Preferences for Meal ➤ &nbsp;</label>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px; margin-left: 35px;">
+                                <input type="radio" id="customRadioInline1" name="preferences" class="custom-control-input"
+                                  value="veg" selected required>
+                                <label class="custom-control-label" for="customRadioInline1">Veg</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px;">
+                                <input type="radio" id="customRadioInline2" name="preferences" value="Non-Veg" class="custom-control-input" required>
+                                <label class="custom-control-label" for="customRadioInline2">Non Veg</label>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Wheel Chair Needed ➤ &nbsp;</label>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px; margin-left:35px;">
+                                <input type="radio" class="custom-control-input" id="customRadio1" value="yes" name="wheelchair" required>
+                                <label class="custom-control-label" for="customRadio1">Yes</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px;">
+                                <input type="radio" class="custom-control-input" id="customRadio2" value="No" name="wheelchair" required>
+                                <label class="custom-control-label" for="customRadio2">No</label>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Basinet for Infant Needed ➤ &nbsp;</label>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px;">
+                                <input type="radio" value="Yes" name="basinet" class="custom-control-input" id="customRadio3" required>
+                                <label class="custom-control-label" for="customRadio3">Yes</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline" style="margin-top:0px;">
+                                <input type="radio" value="no" name="basinet" class="custom-control-input" id="customRadio4" required>
+                                <label class="custom-control-label" for="customRadio4">No</label>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--2nd Passenger checked-->
+                  <div class="row" id="Traveller2" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-2
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname2" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname2" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname2" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender2" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob2" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass2()">Remove passenger</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--3rd Passenger-->
+                  <div class="row"  id="Traveller3" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-3
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname3" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname3" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname3" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender3" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob3" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass3()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--4th Passenger c-->
+                  <div class="row"  id="Traveller4" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-4
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname4" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname4" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname4" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender4" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob4" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass4()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--5th Passenger c-->
+                  <div class="row"  id="Traveller5" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-5
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname5" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname5" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname5" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender5" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob5" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass5()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--6th Passenger c-->
+                  <div class="row"  id="Traveller6" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-6
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname6" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname6" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname6" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender6" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob6" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass6()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--7th Passenger-->
+                  <div class="row"  id="Traveller7" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-7
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname7" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname7" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname7" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender7" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob7" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass7()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--8th Passenger-->
+                  <div class="row"  id="Traveller8" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-8
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname8" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname8" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname8" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender8" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob8" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass8()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--9th Passenger-->
+                  <div class="row"  id="Traveller9" style="display:none;">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1);">
+                        <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                          Traveller-9
+                        </div>
+                      </div>
+                      <div class="container" style="margin:auto; background-image: url('jet-photo.jpg');">
+                        <div class="row">
+                          <div class="col-lg-12">
+
+                            <div class="card" style="padding: 10px; margin:10px 0px; padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                              <div class="card-header" style=" background: rgba(240, 0, 0, 0.5); color:white;">
+                                Passenger Details
+                              </div>
+                              <div class="card-body">
+                                <h5>
+                                  Name
+                                  <small>(As per Passport)</small>
+                                </h5>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputfname">&nbsp;</label>
+                                    <input type="text" name="Fname9" class="form-control" id="inputfname" placeholder="Given Name"
+                                      >
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputMname">&nbsp;</label>
+                                    <input type="text" name="Mname9" class="form-control" id="inputMname" placeholder="Middle Name">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputLname">&nbsp;</label>
+                                    <input type="text" name="Lname9" class="form-control" id="inputLname" placeholder="Last Name"
+                                      >
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group cold-md-2">
+                                    <label for="inputGender">Gender</label>
+                                    <select name="Gender9" id="inputGender" class="form-control" >
+                                      <option selected>Choose...</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputDOB">Date of Birth</label>
+                                    <input type="date" name="dob9" class="form-control" id="inputDOB" >
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="button" style="margin-left:15px; margin-top:35px;  background-color: rgba(240, 0, 0, 0.5); color:white;"
+                                        onClick="removePass9()">Remove passenger</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                          
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" style="padding-left:5px; background-color: rgba(240, 0, 0, 0.5); color:white;" onclick="myFunction()" >Add Passenger</button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class=card style="padding:10px; margin:10px 0px; background: rgba(0,0,0,0.1); color: white;">
+                        <div class="card-header" style="background: rgba(240, 0, 0, 0.5); color: white;">
+                          Payment Details
+                        </div>
+                        <div class="card-body">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputvisa">American Express Card, Credit Card,Master Card</label>
+                              <input type="text" name="paymentcardnumber" class="form-control" id="inputvisa" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                placeholder="Enter your card Number" required >
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputnamevisa">Name(as it appears on your card)</label>
+                              <input type="text" name="paymentname" class="form-control" id="inputnamevisa" placeholder="As it appears on your credit card statement" required
+                                >
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label for="inputvisamonth">Expiration Month</label><br>
+                              <select id="inputState" name="paymentmonth" class="form-control" required >
+                                <option selected>Month</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputnamevisa">Expiration Date</label>
+                              <select id="inputState" name="paymentyear" class="form-control" required >
+                                <option selected>Year</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputCity">CVV</label>
+                              <input type="text" name="paymentcvv" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="4" id="inputCity" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card" style="padding: 10px; margin:10px 0px;  background: rgba(0,0,0,0.1); color:white;">
+                        <div class="card-header" style="background: rgba(240, 0, 0, 0.5); color: white;">
+                          Billing Details of Cardholder
+                        </div>
+                        <div class="card-body">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputvisa">Country</label>
+                              <select class="form-control" name="billingcountry"required >
+                                <option selected>Canada</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputnamevisa">Enter Your Billing Address</label>
+                              <input type="text" name="billingaddress" class="form-control" id="inputnamevisa"
+                                placeholder="As it appears on your credit card statement" required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputvisa">City or Town</label>
+                              <input type="text" name="billingcity" class="form-control" id="inputvisa" placeholder="Enter your city" required
+                                >
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputnamevisa">State/Province</label>
+                              <input type="text" name="billingstate" class="form-control" id="inputnamevisa"
+                                placeholder="Enter Your state Here" required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputvisa">Zip/Postal Code</label>
+                              <input type="text" name="billingzip" class="form-control" id="inputvisa" placeholder="Enter your zip" required
+                                >
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputCity">Phone Number</label>
+                              <input type="text" name="billingphonenumber" class="form-control" placeholder="Phone number associated with your bank" required
+                                >
+                            </div>
+                          </div>
+                          <h4>Review and Book Your Trip</h4>
+                          <label>* Check name spelling, passenger names must be exactly as per the passport. Name
+                            changes are not permitted after booking.
+                            <br> * Please ensure that the departure date and time for your flight are accurate.
+                            Please note that all tickets are non-transferable.
+                            <br> * All service fees are non-refundable.
+                            <br> * Taxes and our service fees are included in the total ticket cost.
+                            <br> * Routing and date changes are subject to airlines authorization.
+                            <br> * Fares are not guaranteed until tickets are issued.
+                            <br> * Due to multiple merchants involved in the services, there might be multiple
+                            transactions on your credit card, please check the total.
+                            <br> * Check your flight schedule 24 hours before your flight with us or on airline
+                            website.
+                            <br> * Cancellation before departure: CAD 450 (Minimum 24 hours before departure)
+                            <br> * JET AIRWAYS and AIR CANADA Cancellation before departure: CAD 550 (Minimum 24
+                            hours before departure)
+                            <br> * Cancellation after departure: Non Refundable
+                            <br> * Changes anytime: CAD 250 + difference of price and taxes wherever applicable.
+                            * Not all tickets are refundable, kindly check with the agent at the time of booking.</label>
+                          <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="customCheck1" required >
+                              <label class="custom-control-label" for="customCheck1" required>I accept, electronically sign and agree to abide by Toureto Travel Terms and Conditions, Privacy Policy, Airline Fare Rule and I authorize the charges on my card.</label>
+                            </div>
+                          </div>
+                          <button type="submit" class="btn" name="submit">Submit</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
